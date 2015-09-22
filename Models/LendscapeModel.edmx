@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SecurityCloneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="ActiveInRotation" Type="bit" Nullable="false" />
+          <Property Name="BillingCodeID" Type="int" />
+          <Property Name="ContactID" Type="int" Nullable="false" />
+          <Property Name="DateInactive" Type="datetime" />
+          <Property Name="DisplayName" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="HireDate" Type="datetime" />
+          <Property Name="MembershipUserName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="MortgageBrokerID" Type="int" Nullable="false" />
+          <Property Name="MothersMaidenName" Type="varchar" MaxLength="50" />
+          <Property Name="PointPurchased" Type="datetime" />
+          <Property Name="PDSUserFolderName" Type="varchar" MaxLength="100" />
+          <Property Name="RetentionDate" Type="datetime" />
+          <Property Name="RecruiterUserID" Type="int" />
+          <Property Name="SSN" Type="varchar" MaxLength="9" />
+          <Property Name="TermDate" Type="datetime" />
+          <Property Name="TextMessagingOptionID" Type="int" Nullable="false" />
+          <Property Name="EmailMessagingOptionID" Type="int" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PDSVersionID" Type="int" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="PointSubscribeDate" Type="datetime" />
+          <Property Name="UserNotes" Type="varchar(max)" />
+          <Property Name="MyNotes" Type="varchar(max)" />
+          <Property Name="PLAccountNumber" Type="varchar" MaxLength="50" />
+          <Property Name="AnnualAdminFeeDate" Type="datetime" />
+          <Property Name="HasDOAccount" Type="bit" />
+          <Property Name="HasLPAccount" Type="bit" />
+          <Property Name="HasCREDCOAccount" Type="bit" />
+          <Property Name="DOUsername" Type="varchar" MaxLength="50" />
+          <Property Name="DOPassword" Type="varchar" MaxLength="50" />
+          <Property Name="OverrideFeeSelfProcessAdmin" Type="money" />
+          <Property Name="NMLS" Type="varchar" MaxLength="50" />
+          <Property Name="NMLSNationalExamDate" Type="datetime" />
+          <Property Name="NMLSRelationshipEstablished" Type="bit" />
+          <Property Name="PrimaryMortgageBranchID" Type="int" />
+          <Property Name="FPFRepID" Type="int" />
+          <Property Name="CreditAgencyID" Type="int" />
+          <Property Name="CreditAgencyUsername" Type="varchar" MaxLength="50" />
+          <Property Name="CreditAgencyPassword" Type="varchar" MaxLength="50" />
+          <Property Name="CreditAgencyID2" Type="int" />
+          <Property Name="CreditAgencyUsername2" Type="varchar" MaxLength="50" />
+          <Property Name="CreditAgencyPassword2" Type="varchar" MaxLength="50" />
+          <Property Name="NMLSHasSponsorship" Type="bit" />
+          <Property Name="HasFPFDUAccount" Type="bit" />
+          <Property Name="NMLSRelationshipBranchEstablished" Type="bit" />
+          <Property Name="NMLSPE" Type="bit" />
+          <Property Name="AllowAppraisalOrdersForLP" Type="bit" />
+          <Property Name="EnableCRM" Type="bit" Nullable="false" />
+          <Property Name="IsInCRM" Type="bit" Nullable="false" />
+          <Property Name="EnableProcessorContactClient" Type="bit" />
+          <Property Name="EncompassMigrated" Type="datetime" />
+          <Property Name="FPFMailAcknowledgeCount" Type="int" Nullable="false" />
+          <Property Name="IsGroupAccount" Type="bit" />
+          <Property Name="LegalFullName" Type="varchar" MaxLength="75" />
+          <Property Name="IsSuspended" Type="bit" />
+          <Property Name="ProfilePhotoFileId" Type="int" />
+          <Property Name="Bio" Type="nvarchar(max)" />
+          <Property Name="ChangePasswordKey" Type="varchar" MaxLength="50" />
+          <Property Name="IsOffLocation" Type="bit" />
+          <Property Name="OutOfOfficeAssistUserID" Type="int" />
+          <Property Name="OutOfOfficeExpired" Type="datetime" />
+          <Property Name="OutOfOfficeCCMe" Type="bit" />
+          <Property Name="EncLoginPswd" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SecurityCloneModelStoreContainer">
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SecurityCloneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="ActiveInRotation" Type="Boolean" Nullable="false" />
+          <Property Name="BillingCodeID" Type="Int32" />
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <Property Name="DateInactive" Type="DateTime" Precision="3" />
+          <Property Name="DisplayName" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HireDate" Type="DateTime" Precision="3" />
+          <Property Name="MembershipUserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MortgageBrokerID" Type="Int32" Nullable="false" />
+          <Property Name="MothersMaidenName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PointPurchased" Type="DateTime" Precision="3" />
+          <Property Name="PDSUserFolderName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RetentionDate" Type="DateTime" Precision="3" />
+          <Property Name="RecruiterUserID" Type="Int32" />
+          <Property Name="SSN" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="TermDate" Type="DateTime" Precision="3" />
+          <Property Name="TextMessagingOptionID" Type="Int32" Nullable="false" />
+          <Property Name="EmailMessagingOptionID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PDSVersionID" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="PointSubscribeDate" Type="DateTime" Precision="3" />
+          <Property Name="UserNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MyNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PLAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnnualAdminFeeDate" Type="DateTime" Precision="3" />
+          <Property Name="HasDOAccount" Type="Boolean" />
+          <Property Name="HasLPAccount" Type="Boolean" />
+          <Property Name="HasCREDCOAccount" Type="Boolean" />
+          <Property Name="DOUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OverrideFeeSelfProcessAdmin" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NMLS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NMLSNationalExamDate" Type="DateTime" Precision="3" />
+          <Property Name="NMLSRelationshipEstablished" Type="Boolean" />
+          <Property Name="PrimaryMortgageBranchID" Type="Int32" />
+          <Property Name="FPFRepID" Type="Int32" />
+          <Property Name="CreditAgencyID" Type="Int32" />
+          <Property Name="CreditAgencyUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreditAgencyPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreditAgencyID2" Type="Int32" />
+          <Property Name="CreditAgencyUsername2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreditAgencyPassword2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NMLSHasSponsorship" Type="Boolean" />
+          <Property Name="HasFPFDUAccount" Type="Boolean" />
+          <Property Name="NMLSRelationshipBranchEstablished" Type="Boolean" />
+          <Property Name="NMLSPE" Type="Boolean" />
+          <Property Name="AllowAppraisalOrdersForLP" Type="Boolean" />
+          <Property Name="EnableCRM" Type="Boolean" Nullable="false" />
+          <Property Name="IsInCRM" Type="Boolean" Nullable="false" />
+          <Property Name="EnableProcessorContactClient" Type="Boolean" />
+          <Property Name="EncompassMigrated" Type="DateTime" Precision="3" />
+          <Property Name="FPFMailAcknowledgeCount" Type="Int32" Nullable="false" />
+          <Property Name="IsGroupAccount" Type="Boolean" />
+          <Property Name="LegalFullName" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="IsSuspended" Type="Boolean" />
+          <Property Name="ProfilePhotoFileId" Type="Int32" />
+          <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChangePasswordKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsOffLocation" Type="Boolean" />
+          <Property Name="OutOfOfficeAssistUserID" Type="Int32" />
+          <Property Name="OutOfOfficeExpired" Type="DateTime" Precision="3" />
+          <Property Name="OutOfOfficeCCMe" Type="Boolean" />
+          <Property Name="EncLoginPswd" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SecurityCloneEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SecurityCloneModelStoreContainer" CdmEntityContainer="SecurityCloneEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SecurityCloneModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ActiveInRotation" ColumnName="ActiveInRotation" />
+                <ScalarProperty Name="BillingCodeID" ColumnName="BillingCodeID" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="DateInactive" ColumnName="DateInactive" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="MembershipUserName" ColumnName="MembershipUserName" />
+                <ScalarProperty Name="MortgageBrokerID" ColumnName="MortgageBrokerID" />
+                <ScalarProperty Name="MothersMaidenName" ColumnName="MothersMaidenName" />
+                <ScalarProperty Name="PointPurchased" ColumnName="PointPurchased" />
+                <ScalarProperty Name="PDSUserFolderName" ColumnName="PDSUserFolderName" />
+                <ScalarProperty Name="RetentionDate" ColumnName="RetentionDate" />
+                <ScalarProperty Name="RecruiterUserID" ColumnName="RecruiterUserID" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="TermDate" ColumnName="TermDate" />
+                <ScalarProperty Name="TextMessagingOptionID" ColumnName="TextMessagingOptionID" />
+                <ScalarProperty Name="EmailMessagingOptionID" ColumnName="EmailMessagingOptionID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PDSVersionID" ColumnName="PDSVersionID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="PointSubscribeDate" ColumnName="PointSubscribeDate" />
+                <ScalarProperty Name="UserNotes" ColumnName="UserNotes" />
+                <ScalarProperty Name="MyNotes" ColumnName="MyNotes" />
+                <ScalarProperty Name="PLAccountNumber" ColumnName="PLAccountNumber" />
+                <ScalarProperty Name="AnnualAdminFeeDate" ColumnName="AnnualAdminFeeDate" />
+                <ScalarProperty Name="HasDOAccount" ColumnName="HasDOAccount" />
+                <ScalarProperty Name="HasLPAccount" ColumnName="HasLPAccount" />
+                <ScalarProperty Name="HasCREDCOAccount" ColumnName="HasCREDCOAccount" />
+                <ScalarProperty Name="DOUsername" ColumnName="DOUsername" />
+                <ScalarProperty Name="DOPassword" ColumnName="DOPassword" />
+                <ScalarProperty Name="OverrideFeeSelfProcessAdmin" ColumnName="OverrideFeeSelfProcessAdmin" />
+                <ScalarProperty Name="NMLS" ColumnName="NMLS" />
+                <ScalarProperty Name="NMLSNationalExamDate" ColumnName="NMLSNationalExamDate" />
+                <ScalarProperty Name="NMLSRelationshipEstablished" ColumnName="NMLSRelationshipEstablished" />
+                <ScalarProperty Name="PrimaryMortgageBranchID" ColumnName="PrimaryMortgageBranchID" />
+                <ScalarProperty Name="FPFRepID" ColumnName="FPFRepID" />
+                <ScalarProperty Name="CreditAgencyID" ColumnName="CreditAgencyID" />
+                <ScalarProperty Name="CreditAgencyUsername" ColumnName="CreditAgencyUsername" />
+                <ScalarProperty Name="CreditAgencyPassword" ColumnName="CreditAgencyPassword" />
+                <ScalarProperty Name="CreditAgencyID2" ColumnName="CreditAgencyID2" />
+                <ScalarProperty Name="CreditAgencyUsername2" ColumnName="CreditAgencyUsername2" />
+                <ScalarProperty Name="CreditAgencyPassword2" ColumnName="CreditAgencyPassword2" />
+                <ScalarProperty Name="NMLSHasSponsorship" ColumnName="NMLSHasSponsorship" />
+                <ScalarProperty Name="HasFPFDUAccount" ColumnName="HasFPFDUAccount" />
+                <ScalarProperty Name="NMLSRelationshipBranchEstablished" ColumnName="NMLSRelationshipBranchEstablished" />
+                <ScalarProperty Name="NMLSPE" ColumnName="NMLSPE" />
+                <ScalarProperty Name="AllowAppraisalOrdersForLP" ColumnName="AllowAppraisalOrdersForLP" />
+                <ScalarProperty Name="EnableCRM" ColumnName="EnableCRM" />
+                <ScalarProperty Name="IsInCRM" ColumnName="IsInCRM" />
+                <ScalarProperty Name="EnableProcessorContactClient" ColumnName="EnableProcessorContactClient" />
+                <ScalarProperty Name="EncompassMigrated" ColumnName="EncompassMigrated" />
+                <ScalarProperty Name="FPFMailAcknowledgeCount" ColumnName="FPFMailAcknowledgeCount" />
+                <ScalarProperty Name="IsGroupAccount" ColumnName="IsGroupAccount" />
+                <ScalarProperty Name="LegalFullName" ColumnName="LegalFullName" />
+                <ScalarProperty Name="IsSuspended" ColumnName="IsSuspended" />
+                <ScalarProperty Name="ProfilePhotoFileId" ColumnName="ProfilePhotoFileId" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="ChangePasswordKey" ColumnName="ChangePasswordKey" />
+                <ScalarProperty Name="IsOffLocation" ColumnName="IsOffLocation" />
+                <ScalarProperty Name="OutOfOfficeAssistUserID" ColumnName="OutOfOfficeAssistUserID" />
+                <ScalarProperty Name="OutOfOfficeExpired" ColumnName="OutOfOfficeExpired" />
+                <ScalarProperty Name="OutOfOfficeCCMe" ColumnName="OutOfOfficeCCMe" />
+                <ScalarProperty Name="EncLoginPswd" ColumnName="EncLoginPswd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
