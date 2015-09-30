@@ -36,8 +36,8 @@ namespace ImportEncPswds
 
 
                     string[] fields = line.Split(',');
-                    string username = fields[0];
-                    string encPswd = fields[1];
+                    string username = fields[0].Trim();
+                    string encPswd = fields[1].Trim();
 
                     try
                     {
